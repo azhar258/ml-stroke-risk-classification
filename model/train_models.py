@@ -11,8 +11,8 @@ from model.knn_model import train_knn
 from model.xgboost_model import train_xgboost
 
 
-def train_all_models(csv_path):
-    X_train, X_test, y_train, y_test = load_and_preprocess_data(csv_path)
+def train_all_models(df):
+    X_train, X_test, y_train, y_test = load_and_preprocess_data(df)
 
     models = {
         'Logistic Regression': train_logistic_regression(X_train, y_train),

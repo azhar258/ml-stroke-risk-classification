@@ -4,8 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
 
-def load_and_preprocess_data(csv_path):
-    df = pd.read_csv(csv_path)
+def load_and_preprocess_data(df):
 
     # Drop ID column if present
     if "id" in df.columns:
