@@ -1,4 +1,5 @@
 import pandas as pd
+
 from model.preprocessing import load_and_preprocess_data
 from model.evaluation import evaluate_model
 
@@ -9,6 +10,7 @@ from model.random_forest_model import train_random_forest
 from model.knn_model import train_knn
 from model.xgboost_model import train_xgboost
 
+
 def train_all_models(csv_path):
     X_train, X_test, y_train, y_test = load_and_preprocess_data(csv_path)
 
@@ -18,8 +20,12 @@ def train_all_models(csv_path):
         'Naive Bayes': train_naive_bayes(X_train, y_train),
         'Random Forest': train_random_forest(X_train, y_train),
         'KNN': train_knn(X_train, y_train),
-        'XGBoost': train_xgboost(X_train, y_train)
     }
+
+    # XGBoost handled separately (important!)
+    xgb_model = train_xgboost(X_train, y_train)
+    if xgb_model is not None:
+        models['XGBoost'] = xgb_model
 
     results = []
     for name, model in models.items():
@@ -33,4 +39,5 @@ def train_all_models(csv_path):
             "F1": metrics["F1"],
             "MCC": metrics["MCC"]
         })
+
     return pd.DataFrame(results), models

@@ -1,6 +1,13 @@
-from xgboost import XGBClassifier
+try:
+    from xgboost import XGBClassifier
+except Exception:
+    XGBClassifier = None
+
 
 def train_xgboost(X_train, y_train):
+    if XGBClassifier is None:
+        return None
+
     model = XGBClassifier(
         eval_metric="logloss",
         use_label_encoder=False,
