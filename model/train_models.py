@@ -1,13 +1,13 @@
 import pandas as pd
-from preprocessing import load_and_preprocess_data
-from evaluation import evaluate_model
+from model.preprocessing import load_and_preprocess_data
+from model.evaluation import evaluate_model
 
-from logistic_model import train_logistic_regression
-from decision_tree_model import train_decision_tree
-from naive_bayes_model import train_naive_bayes
-from random_forest_model import train_random_forest
-from knn_model import train_knn
-from xgboost_model import train_xgboost
+from model.logistic_model import train_logistic_regression
+from model.decision_tree_model import train_decision_tree
+from model.naive_bayes_model import train_naive_bayes
+from model.random_forest_model import train_random_forest
+from model.knn_model import train_knn
+from model.xgboost_model import train_xgboost
 
 def train_all_models(csv_path):
     X_train, X_test, y_train, y_test = load_and_preprocess_data(csv_path)
