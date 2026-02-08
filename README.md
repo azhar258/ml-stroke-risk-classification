@@ -71,7 +71,7 @@ Each model is evaluated using the following metrics:
 
 ## 📋 Model Comparison Table
 
-| Model | Accuracy | AUC | Precision | Recall | F1 Score | MCC |
+| ML Model Name  | Accuracy | AUC | Precision | Recall | F1 Score | MCC |
 |------|----------|-----|-----------|--------|----------|-----|
 | Logistic Regression | 0.9501 | 0.8403 | 0.0000 | 0.0000 | 0.0000 | -0.0071 |
 | Decision Tree | 0.93 | 0.78 | 0.42 | 0.61 | 0.50 | 0.46 |
@@ -84,7 +84,7 @@ Each model is evaluated using the following metrics:
 
 ## 📝 Model Performance Observations
 
-| Model | Observation |
+| ML Model Name  | Observation |
 |------|-------------|
 | Logistic Regression | High accuracy due to class imbalance but fails to detect stroke cases; AUC indicates reasonable separability. |
 | Decision Tree | Captures non-linear relationships but may overfit training data. |
